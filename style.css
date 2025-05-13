@@ -1,0 +1,68 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(to top, #fefcea, #f1da36);
+  color: #333;
+  text-align: center;
+  padding: 50px;
+  overflow: hidden;
+}
+
+h1 {
+  font-size: 3em;
+  margin-bottom: 20px;
+}
+
+#countdown {
+  font-size: 2em;
+  margin-top: 20px;
+}
+
+.hidden {
+  display: none;
+}
+
+.balloon, .flower {
+  position: absolute;
+  animation: float 6s infinite ease-in-out;
+  z-index: -1;
+}
+
+.balloon {
+  width: 50px;
+  height: 70px;
+  background-color: #ff4081;
+  border-radius: 25px 25px 10px 10px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.3);
+}
+
+.flower {
+  width: 60px;
+  height: 60px;
+  background: url('https://upload.wikimedia.org/wikipedia/commons/4/4f/Leucanthemum_vulgare_%28Margarita_com%29.jpg') no-repeat center/cover;
+  border-radius: 50%;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(100vh) rotate(0deg);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-200px) rotate(360deg);
+    opacity: 0;
+  }
+}
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('https://upload.wikimedia.org/wikipedia/commons/4/4f/Leucanthemum_vulgare_%28Margarita_com%29.jpg') repeat;
+  opacity: 0.2;
+  z-index: -2;
+}
